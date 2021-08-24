@@ -1,5 +1,5 @@
 from django import forms
-from . forms import Student
+from .models import Student
 
 Grade = [
     ('A', ('A')),
