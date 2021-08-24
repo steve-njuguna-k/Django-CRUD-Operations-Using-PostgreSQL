@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,105 @@
     <title>Student Register</title>
 </head>
 <body>
-
+    <div class="container py-5">
+        <!-- For demo purpose -->
+        <div class="row mb-4">
+          <div class="col-lg-8 mx-auto text-center">
+            <h1 class="display-4">Django CRUD Operations</h1>
+            <p class="lead mb-0">A simple Student Register for Creating, Reading, Updating <br> & Deleting Student Information</p>
+          </div>
+        </div>
+        <!-- End -->
+      
+        <div class="row">
+            <div class="col-lg-7 mx-auto">
+                <div class="bg-white rounded-lg shadow-lg p-5">      
+                    <!-- form content -->
+                        <div class="tab-content">
+                            <!-- form-->
+                                <center>
+                                    {% if messages %}
+                                        {% for message in messages %} 
+                                        <div class="alert {{message.tags}} m-1" role="alert">
+                                            {{message}}
+                                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </div>
+                                        {% endfor %} 
+                                    {% endif %}
+                                </center>
+                                <form role="form">
+                                    <div class="form-group mb-3">
+                                        <input type="number" name="username" placeholder="Student Number" required class="form-control">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="username" placeholder="First Name" required class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="username" placeholder="Last Name" required class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <label>Date Of Birth</label>
+                                                <input type="date" name="username" placeholder="Date Of Birth" required class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <label>Date Joined</label>
+                                                <input type="date" name="username" placeholder="Date Joined" required class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input type="text" name="username" placeholder="Faculty" required class="form-control">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <input type="text" name="username" placeholder="Department" required class="form-control">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="username" placeholder="Course Name" required class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="username" placeholder="Year Of Study" required class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="username" placeholder="Unit Name" required class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="col-6 mb-3">
+                                            <div class="form-group">
+                                                <input type="text" name="username" placeholder="Grade" required class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="d-grid gap-2">
+                                        <button class="btn btn-primary" type="submit">Register</button>
+                                    </div>
+                                </form>
+                            <!-- End -->
+                        </div>
+                <!-- End -->
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
