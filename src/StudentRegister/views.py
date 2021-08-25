@@ -4,7 +4,7 @@ from .models import Student
 from .forms import StudentForm
 
 # Create your views here.
-def Index(request):
+def Add_Info(request):
     student = Student.objects.all()
     form = StudentForm()
     if request.method == 'POST':
