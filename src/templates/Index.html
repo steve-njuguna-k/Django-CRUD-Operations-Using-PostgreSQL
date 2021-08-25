@@ -17,7 +17,7 @@
     <title>Student Register</title>
 </head>
 <body>
-    <div class="container py-5">
+    <div class="container-fluid py-5">
         <!-- For demo purpose -->
         <div class="row mb-4">
           <div class="col-lg-8 mx-auto text-center">
@@ -92,17 +92,17 @@
                         <div class="modal-body">
                             <form method="POST">
                                 <div class="form-group mb-3">
-                                    <input type="text" name="username" placeholder="Admission Number" required class="form-control">
+                                    <input type="text" name="Admission_Number" placeholder="Admission Number" required class="form-control">
                                 </div>
                                 <div class="row">
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
-                                            <input type="text" name="username" placeholder="First Name" required class="form-control">
+                                            <input type="text" name="First_Name" placeholder="First Name" required class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
-                                            <input type="text" name="username" placeholder="Last Name" required class="form-control">
+                                            <input type="text" name="Last_Name" placeholder="Last Name" required class="form-control">
                                         </div>
                                     </div>
                                 </div>
@@ -110,43 +110,87 @@
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
                                             <label>Date Of Birth</label>
-                                            <input type="date" name="username" placeholder="Date Of Birth" required class="form-control">
+                                            <input type="date" name="Date_Of_Birth" placeholder="Date Of Birth" required class="form-control">
                                         </div>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
                                             <label>Date Joined</label>
-                                            <input type="date" name="username" placeholder="Date Joined" required class="form-control">
+                                            <input type="date" name="Date_Joined" placeholder="Date Joined" required class="form-control">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input type="text" name="username" placeholder="Faculty" required class="form-control">
+                                    <select class="form-select" aria-label="Default select example" name="Faculty" aria-placeholder="Faculty">
+                                        <option disabled selected>Faculty</option>
+                                        <option value="Faculty Of Engineering">Faculty Of Engineering</option>
+                                    </select>
                                 </div>
                                 <div class="form-group mb-3">
-                                    <input type="text" name="username" placeholder="Department" required class="form-control">
+                                    <select class="form-select" aria-label="Default select example" name="Department" aria-placeholder="Faculty">
+                                        <option disabled selected>Department</option>
+                                        <option value="Department of Electrical & Electronic Engineering">Department of Electrical & Electronic Engineering</option>
+                                        <option value="Department of Electrical & Computer Engineering">Department of Electrical & Computer Engineering</option>
+                                        <option value="Department of Mechanical Engineering">Department of Mechanical Engineering</option>
+                                        <option value="Department of Telecommunications Engineering">Department of Telecommunications Engineering</option>
+                                        <option value="Department of Civil & Structural Engineering">Department of Civil & Structural Engineering</option>
+                                        <option value="Department of Mechatronics Engineering">Department of Mechatronics Engineering</option>
+                                        <option value="Department of Marine Engineering">Department of Marine Engineering</option>
+                                    </select>
                                 </div>
                                 <div class="row">
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
-                                            <input type="text" name="username" placeholder="Course Name" required class="form-control">
+                                            <select class="form-select" aria-label="Default select example" name="Course_Name" aria-placeholder="Faculty">
+                                                <option disabled selected>Course Name</option>
+                                                <option value="Bsc. Electrical & Electronic Engineering">Bsc. Electrical & Electronic Engineering</option>
+                                                <option value="Bsc. Electrical & Computer Engineering">Bsc. Electrical & Computer Engineering</option>
+                                                <option value="Bsc. Mechanical Engineering">Bsc. Mechanical Engineering</option>
+                                                <option value="Bsc. Telecommunications Engineering">Bsc. Telecommunications Engineering</option>
+                                                <option value="Bsc. Civil & Structural Engineering">Bsc. Civil & Structural Engineering</option>
+                                                <option value="Bsc. Mechatronics Engineering">Bsc. Mechatronics Engineering</option>
+                                                <option value="Bsc. Marine Engineering">Bsc. Marine Engineering</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
-                                            <input type="text" name="username" placeholder="Year Of Study" required class="form-control">
+                                            <select class="form-select" aria-label="Default select example" name="Year_Of_Study" aria-placeholder="Faculty">
+                                                <option disabled selected>Year Of Study</option>
+                                                <option value="1st Year">1st Year</option>
+                                                <option value="2nd Year">2nd Year</option>
+                                                <option value="3rd Year">3rd Year</option>
+                                                <option value="4th Year">4th Year</option>
+                                                <option value="5th Year">5th Year</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
-                                            <input type="text" name="username" placeholder="Unit Name" required class="form-control">
+                                            <select class="form-select" aria-label="Default select example" name="Unit_Name" aria-placeholder="Faculty">
+                                                <option disabled selected>Unit Name</option>
+                                                <option value="Calculus">Calculus</option>
+                                                <option value="Complex Analysis">Complex Analysis</option>
+                                                <option value="Control Eng.">Control Eng.</option>
+                                                <option value="Economics">Economics</option>
+                                                <option value="Accounitng & Finance">Accounitng & Finance</option>
+                                                <option value="Algebra">Algebra</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-6 mb-3">
                                         <div class="form-group">
-                                            <input type="text" name="username" placeholder="Grade" required class="form-control">
+                                            <select class="form-select" aria-label="Default select example" name="Grade" aria-placeholder="Faculty">
+                                                <option disabled selected>Grade</option>
+                                                <option value="A">A</option>
+                                                <option value="B">B</option>
+                                                <option value="C">C</option>
+                                                <option value="D">D</option>
+                                                <option value="E">E</option>
+                                                <option value="F">F</option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>

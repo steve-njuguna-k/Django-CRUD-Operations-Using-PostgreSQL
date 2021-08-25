@@ -2,7 +2,8 @@ from django import forms
 from .models import Student
 
 Grade = [
-    ('A', ('A')),
+    ('Grade', ('Grade')),
+     ('A', ('A')),
     ('B', ('B')),
     ('C', ('C')),
     ('D', ('D')),
@@ -11,10 +12,12 @@ Grade = [
 ]
 
 Faculty = [
+    ('Faculty', ('Faculty')),
     ('Faculty Of Engineering', ('Faculty Of Engineering')),
 ]
 
 Department = [
+    ('Department', ('Department')),
     ('Department of Electrical & Electronic Engineering', ('Department of Electrical & Electronic Engineering')),
     ('Department of Electrical & Computer Engineering', ('Department of Electrical & Computer Engineering')),
     ('Department of Mechanical Engineering', ('Department of Mechanical Engineering')),
@@ -25,31 +28,41 @@ Department = [
 ]
 
 Course = [
-    ('Bsc. Electrical & Electronic Engineering', ('Bsc. Electrical & Electronic Engineering')),
-    ('Bsc. Electrical & Computer Engineering', ('Bsc. Electrical & Computer Engineering')),
-    ('Bsc. Mechanical Engineering', ('Bsc. Mechanical Engineering')),
-    ('Bsc. Telecommunications Engineering', ('Bsc. Telecommunications Engineering')),
-    ('Bsc. Civil & Structural Engineering', ('Bsc. Civil & Structural Engineering')),
-    ('Bsc. Mechatronics Engineering', ('Bsc. Mechatronics Engineering')),
-    ('Bsc. Marine Engineering', ('Bsc. Marine Engineering')),
+    ('Course', ('Course')),
+    ('Bsc. Electrical & Electronic Eng.', ('Bsc. Electrical & Electronic Eng.')),
+    ('Bsc. Electrical & Computer Eng.', ('Bsc. Electrical & Computer Eng.')),
+    ('Bsc. Mech. Eng.', ('Bsc. Mech. Eng.')),
+    ('Bsc. Telecom Eng.', ('Bsc. Telecom Eng.')),
+    ('Bsc. Civil & Structural Eng.', ('Bsc. Civil & Structural Eng.')),
+    ('Bsc. Mechatronics Eng.', ('Bsc. Mechatronics Eng.')),
+    ('Bsc. Marine Eng.', ('Bsc. Marine Eng.')),
 ]
 
 Year = [
-    x for x in range(1900,2021)
+    ('Year Of Study', ('Year Of Study')),
+    ('1st Year', ('1st Year')),
+    ('2nd Year', ('2nd Year')),
+    ('3rd Year', ('3rd Year')),
+    ('4th Year', ('4th Year')),
+    ('5th Year', ('5th Year')),
 ]
 
 Units = [
+    ('Unit', ('Unit')),
     ('Calculus', ('Calculus')),
     ('Complex Analysis', ('Complex Analysis')),
-    ('Control Engineering', ('Control Engineering')),
+    ('Control Eng.', ('Control Eng.')),
     ('Economics', ('Economics')),
     ('Accounitng & Finance', ('Accounting & Finance')),
     ('Algebra', ('Algebra')),
 ]
 
-class StudentForm(forms.Form):
-    Admission_Number = forms.IntegerField(
-        widget=forms.NumberInput(
+class DateInput(forms.DateInput):
+    input_type = 'date'
+
+class StudentForm(forms.ModelForm):
+    Admission_Number = forms.CharField(
+        widget=forms.TextInput(
             attrs={
                 "placeholder" : "Admission Number",
                 "class": "form-control",
@@ -72,7 +85,8 @@ class StudentForm(forms.Form):
             }
         )
     )
-    DOB = forms.DateField(
+    Date_Of_Birth = forms.DateField(
+        input_formats=['%d/%m/%Y'],
         widget=forms.DateInput(
             attrs={
                 "placeholder" : "Date Of Birth",
@@ -115,9 +129,9 @@ class StudentForm(forms.Form):
             }
         )
     )
-    Year_Of_Study = forms.DateField(
-        widget=forms.SelectDateWidget(
-            years= Year,
+    Year_Of_Study = forms.CharField(
+        widget=forms.Select(
+            choices=Year,
             attrs={
                 "placeholder" : "Year Of Study",
                 "class": "form-control",
@@ -138,7 +152,7 @@ class StudentForm(forms.Form):
             choices= Grade,
             attrs={
                 "placeholder" : "Grade",
-                "class": "form-cotrol",
+                "class": "form-control",
             }
         )
     )
@@ -146,3 +160,7 @@ class StudentForm(forms.Form):
     class Meta:
         model = Student
         fields = '__all__'
+        widgets = {
+            'Date_Of_Birth': DateInput(),
+            'Date_Joined': DateInput(),
+        }
