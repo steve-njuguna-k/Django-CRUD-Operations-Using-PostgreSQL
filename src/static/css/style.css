@@ -4,8 +4,9 @@ body {
 
 .bg-white{
     border-radius: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
 }
 
 .btn-primary{
