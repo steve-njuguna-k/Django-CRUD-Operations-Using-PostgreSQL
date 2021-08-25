@@ -48,10 +48,10 @@ Units = [
 ]
 
 class StudentForm(forms.Form):
-    Student_Number = forms.IntegerField(
+    Admission_Number = forms.IntegerField(
         widget=forms.NumberInput(
             attrs={
-                "placeholder" : "Student Number",
+                "placeholder" : "Admission Number",
                 "class": "form-control",
             }
         )

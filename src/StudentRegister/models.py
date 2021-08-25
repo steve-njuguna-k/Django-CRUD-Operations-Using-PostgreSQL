@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Student(models.Model):
-    Student_Number = models.IntegerField(verbose_name='Student Number')
+    Admission_Number = models.CharField(max_length=50, verbose_name='Admission Number')
     First_Name = models.CharField(max_length=50, verbose_name='First Name')
     Last_Name = models.CharField(max_length=50, verbose_name='Lat Name')
     DOB = models.CharField(max_length=50, verbose_name='Date of Birth')
@@ -15,4 +15,4 @@ class Student(models.Model):
     Grade = models.CharField(max_length=50, verbose_name='Grade')
 
     def __str__(self):
-        return self.Student_Number
+        return self.Admission_Number

@@ -4,4 +4,10 @@ body {
 
 .bg-white{
     border-radius: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.table{
+    margin-top: 50px;
 }
