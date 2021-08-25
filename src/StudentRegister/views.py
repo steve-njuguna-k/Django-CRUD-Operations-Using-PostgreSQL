@@ -5,7 +5,7 @@ from .forms import StudentForm
 
 # Create your views here.
 def Add_Info(request):
-    student = Student.objects.all()
+    students = Student.objects.all()
     form = StudentForm()
     if request.method == 'POST':
         context = {'has_error': False}
@@ -27,11 +27,11 @@ def Add_Info(request):
 
         if not context['has_error']:
             messages.success(request, '✅ Student Info Successfully Added!')
-            return redirect('Index')
+            return redirect('Add_Info')
         
         else:
             messages.error(request, '⚠️ Student Info Unsuccessfully Added!')
-            return redirect('Index')
+            return redirect('Add_Info')
     
-    context = {'student': student, 'form': form}  
+    context = {'students': students, 'form': form}  
     return render(request, 'Index.html', context)

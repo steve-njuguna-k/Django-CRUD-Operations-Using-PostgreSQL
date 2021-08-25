@@ -59,21 +59,23 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                {% for student in students %}
                                 <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>@mdo</td>
+                                <th>{{student.Admission_Number}}</th>
+                                <td>{{student.First_Name}}</td>
+                                <td>{{student.Last_Name}}</td>
+                                <td>{{student.Date_Joined}}</td>
+                                <td>{{student.Course_Name}}</td>
+                                <td>{{student.Year_Of_Study}}</td>
+                                <td>{{student.Unit_Name}}</td>
+                                <td>{{student.Grade}}</td>
                                 <td>
                                     <a href="#" class="view" title="View" data-toggle="tooltip"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                     <a href="#" class="edit" title="Edit" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
                                     <a href="#" class="delete" title="Delete" data-toggle="tooltip"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                 </td>
                                 </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     <!-- End -->
