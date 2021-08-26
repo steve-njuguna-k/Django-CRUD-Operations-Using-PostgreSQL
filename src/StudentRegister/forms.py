@@ -27,7 +27,7 @@ Department = [
     ('Department of Marine Engineering', ('Department of Marine Engineering')),
 ]
 
-Course = [
+Course_Name = [
     ('Course', ('Course')),
     ('Bsc. Electrical & Electronic Eng.', ('Bsc. Electrical & Electronic Eng.')),
     ('Bsc. Electrical & Computer Eng.', ('Bsc. Electrical & Computer Eng.')),
@@ -118,7 +118,7 @@ class StudentForm(forms.ModelForm):
     )
     Course_Name = forms.CharField(
         widget=forms.Select(
-            choices= Course,
+            choices= Course_Name,
             attrs={
                 "placeholder" : "Course Name",
                 "class": "form-control",
