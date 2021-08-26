@@ -22,7 +22,7 @@
         <div class="row mb-4">
           <div class="col-lg-8 mx-auto text-center">
             <h1 class="display-4">Django CRUD Operations</h1>
-            <p class="lead mb-0">A simple Student Register for Creating, Reading, Updating <br> & Deleting Student Information</p>
+            <p class="lead mb-0">A Simple Student Register for Creating, Reading, Updating <br> & Deleting Student Information</p>
           </div>
         </div>
         <!-- End -->
@@ -44,7 +44,7 @@
             <div class="col-lg-12 mx-auto">
                 <div class="bg-white rounded-lg shadow-lg">      
                     <!-- tables-->
-                        <table class="table">
+                        <table class="table" id="studentInfoTable">
                             <thead>
                                 <tr>
                                 <th scope="col">Admission. No.</th>
@@ -70,9 +70,21 @@
                                 <td>{{student.Unit_Name}}</td>
                                 <td>{{student.Grade}}</td>
                                 <td>
-                                    <a href="view/{{ student.id }}" class="view text-primary" title="View" data-toggle="tooltip"><i class="fa fa-eye" aria-hidden="true"></i></a>
-                                    <a href="edit/{{ student.id }}" class="edit text-success" title="Edit" data-toggle="tooltip"><i class="fa fa-edit" aria-hidden="true"></i></a>
-                                    <a href="delete/{{ student.id }}" class="delete text-danger" title="Delete" data-toggle="tooltip"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                                    <a href="{% url 'Edit_Info' student.id %}">
+                                        <button type="button" class="btn btn-success" data-url="{% url 'Edit_Info' student.id %}">
+                                            <i class="fa fa-edit" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
+                                    <a href="{% url 'View_Info' student.id %}">
+                                        <button type="button" class="btn btn-primary">
+                                            <i class="fa fa-eye" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
+                                    <a href="{% url 'Delete_Info' student.id %}"> 
+                                        <button type="button" class="btn btn-danger">
+                                            <i class="fa fa-trash" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
                                 </td>
                                 </tr>
                                 {% endfor %}
@@ -85,7 +97,7 @@
                     Add Student Info
                 </button>
                 
-                <!-- Modal -->
+                <!-- Add Student Info Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
@@ -213,4 +225,6 @@
         </div>
     </div>
 </body>
+
+<script src={% static  "js/script.js" %}></script>
 </html>

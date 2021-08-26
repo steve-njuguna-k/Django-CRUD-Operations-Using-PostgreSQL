@@ -42,7 +42,22 @@ def View_Info(request, id):
 
 def Edit_Info(request, id):
     student = Student.objects.get(id=id)
-    return redirect('Add_Info')
+    form = StudentForm()
+    if request.method == 'POST':
+        context = {'has_error': False}
+        form = StudentForm(request.POST, instance=student)
+
+        if not context['has_error']:
+            messages.success(request, '✅ Student Info Successfully Updated!')
+            return redirect('Add_Info')
+            
+        else:
+            form = StudentForm(instance=student)
+            messages.error(request, '⚠️ Student Info Unsuccessfully Updated!')
+            return redirect('Add_Info')
+    
+    context = {'student': student, 'form': form}  
+    return render(request, 'Index.html', context)
 
 def Delete_Info(request, id):
     student = Student.objects.get(id=id)
