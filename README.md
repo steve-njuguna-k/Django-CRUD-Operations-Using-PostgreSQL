@@ -14,6 +14,7 @@ This is a Django Student Information Register for performing CRUD operations usi
 ![](https://github.com/steve-njuguna-k/Django-CRUD-Operations-Using-PostgreSQL/blob/master/src/static/img/Screenshot-3.PNG)
 
 - You Can Delete Student Information
+
 ![](https://github.com/steve-njuguna-k/Django-CRUD-Operations-Using-PostgreSQL/blob/master/src/static/img/Screenshot-4.PNG)
 
 - You Can View Individual Student Information
