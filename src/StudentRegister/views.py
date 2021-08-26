@@ -38,7 +38,13 @@ def Add_Info(request):
 
 def View_Info(request, id):
     student = Student.objects.get(id=id)
-    return redirect('Add_Info')
+    if request.method == 'POST':
+        form = StudentForm(request.POST, instance=student)
+    else:
+        form = StudentForm(instance=student)
+
+    context = {'student': student, 'form':form}
+    return render(request, 'View.html', context)
 
 def Edit_Info(request, id):
     student = Student.objects.get(id=id)
