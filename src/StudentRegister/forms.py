@@ -3,7 +3,7 @@ from .models import Student
 
 Grade = [
     ('Grade', ('Grade')),
-     ('A', ('A')),
+    ('A', ('A')),
     ('B', ('B')),
     ('C', ('C')),
     ('D', ('D')),
@@ -57,9 +57,6 @@ Units = [
     ('Algebra', ('Algebra')),
 ]
 
-class DateInput(forms.DateInput):
-    input_type = 'date'
-
 class StudentForm(forms.ModelForm):
     Admission_Number = forms.CharField(
         widget=forms.TextInput(
@@ -86,7 +83,6 @@ class StudentForm(forms.ModelForm):
         )
     )
     Date_Of_Birth = forms.DateField(
-        input_formats=['%d/%m/%Y'],
         widget=forms.DateInput(
             attrs={
                 "placeholder" : "Date Of Birth",
@@ -160,7 +156,3 @@ class StudentForm(forms.ModelForm):
     class Meta:
         model = Student
         fields = '__all__'
-        widgets = {
-            'Date_Of_Birth': DateInput(),
-            'Date_Joined': DateInput(),
-        }
