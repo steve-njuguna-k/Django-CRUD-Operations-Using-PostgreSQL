@@ -29,13 +29,13 @@ Department = [
 
 Course_Name = [
     ('Course', ('Course')),
-    ('Bsc. Electrical & Electronic Eng.', ('Bsc. Electrical & Electronic Eng.')),
-    ('Bsc. Electrical & Computer Eng.', ('Bsc. Electrical & Computer Eng.')),
-    ('Bsc. Mech. Eng.', ('Bsc. Mech. Eng.')),
-    ('Bsc. Telecom Eng.', ('Bsc. Telecom Eng.')),
-    ('Bsc. Civil & Structural Eng.', ('Bsc. Civil & Structural Eng.')),
-    ('Bsc. Mechatronics Eng.', ('Bsc. Mechatronics Eng.')),
-    ('Bsc. Marine Eng.', ('Bsc. Marine Eng.')),
+    ('Bsc. Electrical & Electronic Engineering', ('Bsc. Electrical & Electronic Engineering')),
+    ('Bsc. Electrical & Computer Engineering', ('Bsc. Electrical & Computer Engineering')),
+    ('Bsc. Mech. Engineering', ('Bsc. Mech. Engineering')),
+    ('Bsc. Telecom Engineering', ('Bsc. Telecom Engineering')),
+    ('Bsc. Civil & Structural Engineering', ('Bsc. Civil & Structural Engineering')),
+    ('Bsc. Mechatronics Engineering', ('Bsc. Mechatronics Engineering')),
+    ('Bsc. Marine Engineering', ('Bsc. Marine Engineering')),
 ]
 
 Year = [
@@ -51,7 +51,7 @@ Units = [
     ('Unit', ('Unit')),
     ('Calculus', ('Calculus')),
     ('Complex Analysis', ('Complex Analysis')),
-    ('Control Eng.', ('Control Eng.')),
+    ('Control Engineering', ('Control Engineering')),
     ('Economics', ('Economics')),
     ('Accounitng & Finance', ('Accounting & Finance')),
     ('Algebra', ('Algebra')),
