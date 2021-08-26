@@ -35,3 +35,17 @@ def Add_Info(request):
     
     context = {'students': students, 'form': form}  
     return render(request, 'Index.html', context)
+
+def View_Info(request, id):
+    student = Student.objects.get(id=id)
+    return redirect('Add_Info')
+
+def Edit_Info(request, id):
+    student = Student.objects.get(id=id)
+    return redirect('Add_Info')
+
+def Delete_Info(request, id):
+    student = Student.objects.get(id=id)
+    student.delete()
+
+    return redirect('Add_Info')
