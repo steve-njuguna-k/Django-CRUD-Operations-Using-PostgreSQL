@@ -1,5 +1,5 @@
 # Django CRUD Operations Using PostgreSQL
-This is a Django Student Information Register for performing CRUD operations using a postgreSQL database
+This is a Django Student Information Register for performing CRUD operations using a PostgreSQL database
 
 ![](https://github.com/steve-njuguna-k/Django-CRUD-Operations-Using-PostgreSQL/blob/master/src/static/img/Screenshot-1.PNG)
 
